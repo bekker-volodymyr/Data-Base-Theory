@@ -47,3 +47,39 @@ VALUES
 	('Natalia', 'Kostiuk', 'natalia.k@example.com', 850, '2006-06-06', 6);
 
 
+CREATE TABLE Departments (
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	[Name] NVARCHAR(MAX) NOT NULL,
+	Phone NVARCHAR(5) NOT NULL
+);
+
+CREATE TABLE Teachers (
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	FirstName NVARCHAR(MAX) NOT NULL,
+	LastName NVARCHAR(MAX) NOT NULL,
+	DepartmentId INT FOREIGN KEY REFERENCES Departments(Id)
+);
+
+INSERT INTO Departments ([Name], Phone) VALUES 
+('Mathematics', '12-45'),
+('Physics', '23-56'),
+('Chemistry', '34-67'),
+('Biology', '45-78'),
+('Computer Science', '56-89'),
+('History', '67-90'),
+('Geography', '78-01'),
+('Philosophy', '89-12'),
+('Psychology', '90-23'),
+('Linguistics', '01-34');
+
+INSERT INTO Teachers (FirstName, LastName, DepartmentId) VALUES 
+('Ivan', 'Petrenko', 1),
+('Olga', 'Shevchenko', 2),
+('Dmytro', 'Tkachenko', 3),
+('Svitlana', 'Melnyk', 4),
+('Andriy', 'Kovalchuk', 5),
+('Nina', 'Kravchenko', 6),
+('Taras', 'Hnatyuk', 7),
+('Iryna', 'Lysenko', 8),
+('Yurii', 'Bondarenko', 9),
+('Kateryna', 'Marchenko', 10);
