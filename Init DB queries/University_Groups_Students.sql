@@ -2,6 +2,8 @@
 
 CREATE DATABASE University;
 
+USE University;
+
 DROP TABLE IF EXISTS Students;
 DROP TABLE IF EXISTS Groups;
 
